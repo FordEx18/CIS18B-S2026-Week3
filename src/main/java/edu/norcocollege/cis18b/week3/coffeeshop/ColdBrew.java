@@ -1,0 +1,11 @@
+//imports
+import java.math.BigDecimal;
+//Class representing a cold brew beverage, extends the Beverage class
+public class ColdBrew extends Beverage{
+    //static final variable for base price of a cold brew
+    private static final BigDecimal BASE_PRICE=new BigDecimal("4.00");
+    //constructor
+    public ColdBrew(String sku, Size size){
+        super(sku, "Cold Brew", BASE_PRICE, size);
+    }
+}
