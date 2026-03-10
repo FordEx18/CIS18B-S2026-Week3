@@ -31,4 +31,8 @@ public class Beverage extends MenuItem{
                 throw new IllegalStateException("Unexpected size: "+size);
         }
     }
+    //Override getPrice method to calculate price based on size
+    @Override
+    BigDecimal getPrice(){
+        return super.getPrice().multiply(sizeMultiplier());
 }
