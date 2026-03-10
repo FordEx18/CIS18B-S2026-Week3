@@ -11,8 +11,8 @@ public class Beverage extends MenuItem{
     //Private Variables
     private Size size;
     //Constructors
-    public Beverage(String sku,String name,BigDecimal price,Size size){
-        super(sku,name,price);
+    public Beverage(String sku,String name,BigDecimal basePrice,Size size){
+        super(sku,name,basePrice);
         if(size==null){
             throw new IllegalArgumentException("Size cannot be null!");
         }
