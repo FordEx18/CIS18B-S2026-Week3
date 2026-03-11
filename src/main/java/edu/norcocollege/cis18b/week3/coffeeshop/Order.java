@@ -19,21 +19,21 @@ public class Order{
         this.items=new ArrayList<>();
     }
     //addItem method to add items to the order
-    void addItem(MenuItem item){
+    public void addItem(MenuItem item){
         if(item==null){
             throw new IllegalArgumentException("Item cannot be null!");
         }
         items.add(item);
     }
     //Getters
-    void List<MenuItem> getItems(){
+    public List<MenuItem> getItems(){
         return Collections.unmodifiableList(items);
     }
-    void String getOrderId(){
+    public String getOrderId(){
         return orderId;
     }
     //total method to calculate the total price of the order
-    void BigDecimal total(){
+    public BigDecimal total(){
         BigDecimal total=BigDecimal.ZERO;
         for(MenuItem i:items){
             total=total.add(i.getPrice());

@@ -28,16 +28,16 @@ public class MenuItem{
         this.price=price;
     }
     //Getters
-    String getSku(){
+    public String getSku(){
         return sku;
     }
-    String getName(){
+    public String getName(){
         return name;
     }
-    BigDecimal getPrice(){
+    public BigDecimal getPrice(){
         return price;
     }
-    String toString(){
+    public String toString(){
         return "MenuItem: "+name+"("+sku+") - $"+price;
     }
 }

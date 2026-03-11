@@ -8,7 +8,7 @@ public class Latte extends Beverage{
     private static final BigDecimal BASE_PRICE=new BigDecimal("4.50");
     
     //constructor
-    public Latte(String sku, Size size){
-        super(sku, "Latte", BASE_PRICE, size);
+    public Latte(Size size){
+        super("LATTE", "Latte", BASE_PRICE, size);
     }
 }

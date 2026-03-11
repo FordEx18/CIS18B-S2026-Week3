@@ -3,7 +3,7 @@ package edu.norcocollege.cis18b.week3.coffeeshop;
 //imports
 import java.math.BigDecimal;
 //Class for Beverage, which extends MenuItem
-public class Beverage extends MenuItem{
+public abstract class Beverage extends MenuItem{
     //Enum for size of beverage
     enum Size{
         SMALL,
@@ -21,7 +21,7 @@ public class Beverage extends MenuItem{
         this.size=size;
     }
     //Size multiplier method
-    BigDecimal sizeMultiplier(){
+    public BigDecimal sizeMultiplier(){
         switch(size){
             case SMALL:
                 return BigDecimal.ONE;
@@ -35,6 +35,6 @@ public class Beverage extends MenuItem{
     }
     //Override getPrice method to calculate price based on size
     @Override
-    BigDecimal getPrice(){
+    public BigDecimal getPrice(){
         return super.getPrice().multiply(sizeMultiplier());
 }
