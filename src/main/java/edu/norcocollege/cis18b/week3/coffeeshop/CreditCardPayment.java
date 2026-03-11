@@ -9,7 +9,7 @@ public class CreditCardPayment implements PaymentMethod{
     private String last4;
     //constructor
     public CreditCardPayment(String last4){
-        if(last4.length()!=4){
+        if(last4==null||last4.length()!=4||!last4.matches("\\d{4}")){
             throw new IllegalArgumentException("Last 4 digits must be exactly 4 characters!");
         }
         this.last4=last4;

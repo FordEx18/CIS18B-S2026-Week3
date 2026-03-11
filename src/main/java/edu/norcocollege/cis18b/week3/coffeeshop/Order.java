@@ -9,14 +9,13 @@ import java.util.Collections;
 public class Order{
     //Private Variables
     private String orderId;
-    private List<MenuItem> items;
+    private List<MenuItem> items=new ArrayList<>();
     //Constructors
-    public Order(String orderId,List<MenuItem> items){
+    public Order(String orderId){
         if(orderId==null||orderId.isBlank()){
             throw new IllegalArgumentException("Order ID cannot be blank or null!");
         }
         this.orderId=orderId;
-        this.items=new ArrayList<>();
     }
     //addItem method to add items to the order
     public void addItem(MenuItem item){

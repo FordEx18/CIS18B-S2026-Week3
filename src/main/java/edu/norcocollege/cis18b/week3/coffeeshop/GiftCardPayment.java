@@ -24,7 +24,7 @@ public class GiftCardPayment implements PaymentMethod{
         }
         //Deduct amount from balance
         balance=balance.subtract(amount);
-        String method="GIFT_CARD(BALANCE: $"+balance+")";
+        String method="GIFT_CARD";
         return new PaymentReceipt(orderId, amount, method, Instant.now());
     }
     //Method to get current balance
