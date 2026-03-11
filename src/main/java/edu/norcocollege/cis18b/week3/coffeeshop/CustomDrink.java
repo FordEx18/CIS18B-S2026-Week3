@@ -27,6 +27,23 @@ public class CustomDrink extends Beverage{
         this.espressoShots=espressoShots;
         this.extras=new ArrayList<>();
     }
+    //Override get price method to calculate price based on customizations
+    @Override
+    public BigDecimal getPrice(){
+        BigDecimal price=super.getPrice();
+        //Add cost for extra espresso shots
+        if(espressoShots>1){
+            price=price.add(new BigDecimal("0.75").multiply(new BigDecimal(espressoShots-1)));
+        }
+        //Add cost for syrup
+        if(syrup!=Syrup.NONE){
+            price=price.add(new BigDecimal("0.50"));
+        }
+        //Add cost for extras
+        price=price.add(new BigDecimal("0.25").multiply(new BigDecimal(extras.size())));
+        //final price
+        return price.setScale(2);
+    }
     //Builder for CustomDrink
     public static class Builder{
         //private fields for Builder with default values
@@ -36,23 +53,6 @@ public class CustomDrink extends Beverage{
         private Temperature temperature=Temperature.HOT;
         private int espressoShots=1;
         private List<String> extras=new ArrayList<>();
-        //Override get price method to calculate price based on customizations
-        public BigDecimal getPrice(){
-            BigDecimal price=PricingCatalog.getInstance().getBasePrice("CUSTOM");
-            //Add cost for extra espresso shots
-            if(espressoShots>1){
-                price=price.add(new BigDecimal("0.75").multiply(new BigDecimal(espressoShots-1)));
-            }
-            //Add cost for syrup
-            if(syrup!=Syrup.NONE){
-                price=price.add(new BigDecimal("0.50"));
-            }
-            //Add cost for extras
-            price=price.add(new BigDecimal("0.25").multiply(new BigDecimal(extras.size())));
-            //final price
-            return price.setScale(2);
-        }
-
         //Builder methods for each field
         public Builder size(Size size){
             this.size=size;

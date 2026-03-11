@@ -24,11 +24,11 @@ public abstract class Beverage extends MenuItem{
     public BigDecimal sizeMultiplier(){
         switch(size){
             case SMALL:
-                return new BigDecimal("1.0");
+                return new BigDecimal("1.00");
             case MEDIUM:
-                return new BigDecimal("1.2");
+                return new BigDecimal("1.20");
             case LARGE:
-                return new BigDecimal("1.4");
+                return new BigDecimal("1.40");
             default:
                 throw new IllegalStateException("Unexpected size: "+size);
         }
@@ -36,6 +36,6 @@ public abstract class Beverage extends MenuItem{
     //Override getPrice method to calculate price based on size
     @Override
     public BigDecimal getPrice(){
-        return super.getPrice().multiply(sizeMultiplier());
+        return super.getPrice().multiply(sizeMultiplier().setScale(2));
     }
 }
