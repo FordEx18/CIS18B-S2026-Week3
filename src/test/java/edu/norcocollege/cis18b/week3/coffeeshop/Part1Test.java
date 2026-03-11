@@ -1,4 +1,4 @@
-package edu.norco.cis18b.coffeeshop;
+package edu.norcocollege.cis18b.week3.coffeeshop;
 
 import org.junit.jupiter.api.Test;
 
