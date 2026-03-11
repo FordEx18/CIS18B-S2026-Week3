@@ -20,7 +20,7 @@
         <profile>
             <id>run-app</id>
             <properties>
-                <mainClass>edu.norcocollege.cis18b.week3.coffeeshop.Main</mainClass>
+                <mainClass>edu.norcocollege.cis18b.week3.coffeeshop.App</mainClass>
             </properties>
         </profile>
     </profiles>
