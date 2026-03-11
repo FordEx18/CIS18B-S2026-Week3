@@ -4,6 +4,7 @@ package edu.norcocollege.cis18b.week3.coffeeshop;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.ArrayList;
+import java.math.RoundingMode;
 //Class for CustomDrink, which extends Beverage
 public class CustomDrink extends Beverage{
     //enum for milk options
@@ -42,7 +43,7 @@ public class CustomDrink extends Beverage{
         //Add cost for extras
         price=price.add(new BigDecimal("0.25").multiply(new BigDecimal(extras.size())));
         //final price
-        return price.setScale(2);
+        return price.setScale(2, RoundingMode.HALF_UP);
     }
     //Builder for CustomDrink
     public static class Builder{

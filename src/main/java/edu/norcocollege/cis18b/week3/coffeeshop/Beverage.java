@@ -2,6 +2,7 @@
 package edu.norcocollege.cis18b.week3.coffeeshop;
 //imports
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 //Class for Beverage, which extends MenuItem
 public abstract class Beverage extends MenuItem{
     //Enum for size of beverage
@@ -36,6 +37,7 @@ public abstract class Beverage extends MenuItem{
     //Override getPrice method to calculate price based on size
     @Override
     public BigDecimal getPrice(){
-        return super.getPrice().multiply(sizeMultiplier().setScale(2));
+        BigDecimal total=super.getPrice().multiply(sizeMultiplier());
+        return total.setScale(2, RoundingMode.HALF_UP);
     }
 }

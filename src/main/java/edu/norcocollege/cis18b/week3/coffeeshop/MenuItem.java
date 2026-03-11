@@ -2,6 +2,7 @@
 package edu.norcocollege.cis18b.week3.coffeeshop;
 //import BigDecimal for price variable
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 //Class for MenuItems
 public class MenuItem{
     //Private Variables
@@ -25,7 +26,7 @@ public class MenuItem{
         //Set variables if all checks are passed
         this.sku=sku;
         this.name=name;
-        this.price=price.setScale(2);
+        this.price=price.setScale(2, RoundingMode.HALF_UP);
     }
     //Getters
     public String getSku(){
