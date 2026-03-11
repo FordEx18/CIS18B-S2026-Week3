@@ -1,6 +1,7 @@
+//package
+package edu.norcocollege.cis18b.week3.coffeeshop;
 //import BigDecimal for price variable
 import java.math.BigDecimal;
-
 //Class for MenuItems
 public class MenuItem{
     //Private Variables

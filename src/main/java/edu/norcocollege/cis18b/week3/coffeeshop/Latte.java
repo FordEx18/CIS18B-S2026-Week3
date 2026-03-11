@@ -1,3 +1,7 @@
+//package
+package edu.norcocollege.cis18b.week3.coffeeshop;
+//imports
+import java.math.BigDecimal;
 //Class for Latte, which extends Beverage
 public class Latte extends Beverage{
     //static final variable for base price of a latte

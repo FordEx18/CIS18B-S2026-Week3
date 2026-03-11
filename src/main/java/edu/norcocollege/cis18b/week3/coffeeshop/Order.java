@@ -1,3 +1,5 @@
+//package
+package edu.norcocollege.cis18b.week3.coffeeshop;
 //Imports
 import java.util.List;
 import java.util.ArrayList;
