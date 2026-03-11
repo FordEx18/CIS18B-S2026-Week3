@@ -21,7 +21,7 @@ public class CustomDrink extends Beverage{
     //Private fields 
     private Milk milk;
     private Syrup syrup;
-    private Temperature temp;
+    private Temperature temperature;
     private int espressoShots;
     private List<String> extras;
     //static final variable for base price of a custom drink
@@ -31,9 +31,9 @@ public class CustomDrink extends Beverage{
         super("CUSTOM-DRINK", "Custom Drink", BASE_PRICE, builder.size);
         this.milk=builder.milk;
         this.syrup=builder.syrup;
-        this.temp=builder.temp;
+        this.temperature=builder.temperature;
         this.espressoShots=builder.espressoShots;
-        this.extras=builder.extras;{
+        this.extras=builder.extras;
     }
     //price method to calculate price based on customizations
     @Override
@@ -57,9 +57,10 @@ public class CustomDrink extends Beverage{
         private Size size=Size.MEDIUM;
         private Milk milk=Milk.WHOLE;
         private Syrup syrup=Syrup.NONE;
-        private Temperature temp=Temperature.HOT;
+        private Temperature temperature=Temperature.HOT;
         private int espressoShots=1;
         private List<String> extras=new ArrayList<>();
+    }
         //Builder methods for each parameter
         public Builder size(Size size){
             this.size=size;
@@ -73,8 +74,8 @@ public class CustomDrink extends Beverage{
             this.syrup=syrup;
             return this;
         }
-        public Builder temp(Temperature temp){
-            this.temp=temp;
+        public Builder temp(Temperature temperature){
+            this.temperature=temperature;
             return this;
         }
         public Builder espressoShots(int shots){
@@ -98,4 +99,3 @@ public class CustomDrink extends Beverage{
             return new CustomDrink(this);
         }
     }
-}

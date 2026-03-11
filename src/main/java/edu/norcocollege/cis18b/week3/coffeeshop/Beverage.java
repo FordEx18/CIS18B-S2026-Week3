@@ -24,7 +24,7 @@ public abstract class Beverage extends MenuItem{
     public BigDecimal sizeMultiplier(){
         switch(size){
             case SMALL:
-                return BigDecimal.ONE;
+                return new BigDecimal("1.0");
             case MEDIUM:
                 return new BigDecimal("1.2");
             case LARGE:
@@ -37,4 +37,5 @@ public abstract class Beverage extends MenuItem{
     @Override
     public BigDecimal getPrice(){
         return super.getPrice().multiply(sizeMultiplier());
+    }
 }

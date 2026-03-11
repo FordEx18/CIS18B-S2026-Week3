@@ -26,4 +26,5 @@ public class PricingCatalog{
             default:
                 throw new IllegalArgumentException("Unknown product key: "+productKey);
         }
+    }
 }
